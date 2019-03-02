@@ -2,10 +2,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string||
+|name|string|index:true, unique:true|
 |mail|string|index:true, null: false, unique:true|
 
 ### Association
+- has_many :groups, through: :members
 - has_many :members
 - has_many :messages
 
@@ -13,7 +14,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|message|string|null: false|
+|content|string|null: false|
 |user_id|integer|null: false, foreign_key: true
 
 ### Association
@@ -23,10 +24,12 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
+|name|string|null: false|
 
 ### Association
+- has_many :users, through: :members
 - has_many :members
+- accepts_nested_attributes_for :members
 
 ## membersテーブル
 
