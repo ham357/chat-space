@@ -1,2 +1,33 @@
-%h1 Messages#index
-%p Find me in app/views/messages/index.html.haml
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name test
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__edit-user
+            %a{href: '#'}
+              %i.fa.fa-edit
+          %li.side-header__box__menu__new-group
+            %a{href: '#'}
+              %i.fa.fa-cog
+    .groups
+      %a
+        .group
+          %p.group__group-name test
+          %p.group__latest-message test
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group test
+        %ul.main-header__left-box__member-list
+          Member：
+          %li.main-header__left-box__member-list__member test
+      %a{href: '#'}
+        .main-header__edit-btn Edit
+    .messages
+      .message
+        .message__upper-info
+          %p.message__upper-info__talker test
+          %p.message__upper-info__date 2019/02/25(Mon) 21:27:39
+        %p.message__text test
+    .form
