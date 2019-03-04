@@ -31,3 +31,13 @@
           %p.message__upper-info__date 2019/02/25(Mon) 21:27:39
         %p.message__text test
     .form
+      %form.new_message#new_message{:action => "#", :method => "post"}
+        %input{:name => "utf8", :type => "hidden" , :value => "✓"}
+        %input{:name => "authenticity_token", :type => "hidden" , :value => "PkqJ1pgFpRlShMIDdG0idrrod4pQI54Jn+wouqC5090D0Jn+HJClEvFR4kXZ/7XIBTrmVCAjghbvZTzUKW0b1w=="}
+        .input-box
+          %input.input-box__text#message_content{:placeholder => "type a message", :name => "message[content]", :type => "text"}
+          %label.input-box__image{:for => "message_image"}
+            %i.fa.fa-image
+            %input.input-box__image__file#message_image{:name => "message[image]", :type => "file"}
+        %input.submit-btn#message_image{:name => "commit", :type => "submit", :value => "Send", :data-disable-with => "Send"}
+
