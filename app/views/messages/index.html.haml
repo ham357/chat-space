@@ -1,19 +1,33 @@
-.chat-main
-  .main-header
-    .main-header__left-box
-      %h2.main-header__left-box__current-group test
-      %ul.main-header__left-box__member-list
-        Member：
-        %li.main-header__left-box__member-list__member test
-    %a{href: '#'}
-      .main-header__edit-btn Edit
-  .messages
-    = render partial: "message"
-  .form
-    %form.new_message#new_message{:action => "#", :method => "post"}
-      .input-box
-        %input.input-box__text#message_content{:placeholder => "type a message", :name => "message[content]", :type => "text"}
-        %label.input-box__image{:for => "message_image"}
-          %i.fa.fa-image
-          %input.input-box__image__file#message_image{:name => "message[image]", :type => "file"}
-      %input.submit-btn#message_image{:name => "commit", :type => "submit", :value => "Send", :data-disable-with => "Send"}
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name test
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__edit-user
+            %a{href: '#'}
+              %i.fa.fa-edit
+          %li.side-header__box__menu__new-group
+            %a{href: '#'}
+              %i.fa.fa-cog
+    .groups
+      = render partial: "group"
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group test
+        %ul.main-header__left-box__member-list
+          Member：
+          %li.main-header__left-box__member-list__member test
+      %a{href: '#'}
+        .main-header__edit-btn Edit
+    .messages
+      = render partial: "message"
+    .form
+      %form.new_message#new_message{:action => "#", :method => "post"}
+        .input-box
+          %input.input-box__text#message_content{:placeholder => "type a message", :name => "message[content]", :type => "text"}
+          %label.input-box__image{:for => "message_image"}
+            %i.fa.fa-image
+            %input.input-box__image__file#message_image{:name => "message[image]", :type => "file"}
+        %input.submit-btn#message_image{:name => "commit", :type => "submit", :value => "Send", :data-disable-with => "Send"}
