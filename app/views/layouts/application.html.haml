@@ -20,10 +20,7 @@
                 %a{href: '#'}
                   %i.fa.fa-cog
         .groups
-          %a
-            .group
-              %p.group__group-name test
-              %p.group__latest-message test
+          = render partial: "group"
       .chat-main
         .main-header
           .main-header__left-box
@@ -36,8 +33,6 @@
         = yield
         .form
           %form.new_message#new_message{:action => "#", :method => "post"}
-            %input{:name => "utf8", :type => "hidden" , :value => "✓"}
-            %input{:name => "authenticity_token", :type => "hidden" , :value => "PkqJ1pgFpRlShMIDdG0idrrod4pQI54Jn+wouqC5090D0Jn+HJClEvFR4kXZ/7XIBTrmVCAjghbvZTzUKW0b1w=="}
             .input-box
               %input.input-box__text#message_content{:placeholder => "type a message", :name => "message[content]", :type => "text"}
               %label.input-box__image{:for => "message_image"}
