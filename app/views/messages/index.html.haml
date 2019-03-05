@@ -1,43 +1,6 @@
-.wrapper
-  .chat-side
-    .side-header
-      .side-header__box
-        %p.side-header__box__user-name test
-        %ul.side-header__box__menu
-          %li.side-header__box__menu__edit-user
-            %a{href: '#'}
-              %i.fa.fa-edit
-          %li.side-header__box__menu__new-group
-            %a{href: '#'}
-              %i.fa.fa-cog
-    .groups
-      %a
-        .group
-          %p.group__group-name test
-          %p.group__latest-message test
-  .chat-main
-    .main-header
-      .main-header__left-box
-        %h2.main-header__left-box__current-group test
-        %ul.main-header__left-box__member-list
-          Member：
-          %li.main-header__left-box__member-list__member test
-      %a{href: '#'}
-        .main-header__edit-btn Edit
-    .messages
-      .message
-        .message__upper-info
-          %p.message__upper-info__talker test
-          %p.message__upper-info__date 2019/02/25(Mon) 21:27:39
-        %p.message__text test
-    .form
-      %form.new_message#new_message{:action => "#", :method => "post"}
-        %input{:name => "utf8", :type => "hidden" , :value => "✓"}
-        %input{:name => "authenticity_token", :type => "hidden" , :value => "PkqJ1pgFpRlShMIDdG0idrrod4pQI54Jn+wouqC5090D0Jn+HJClEvFR4kXZ/7XIBTrmVCAjghbvZTzUKW0b1w=="}
-        .input-box
-          %input.input-box__text#message_content{:placeholder => "type a message", :name => "message[content]", :type => "text"}
-          %label.input-box__image{:for => "message_image"}
-            %i.fa.fa-image
-            %input.input-box__image__file#message_image{:name => "message[image]", :type => "file"}
-        %input.submit-btn#message_image{:name => "commit", :type => "submit", :value => "Send", :data-disable-with => "Send"}
-
+.messages
+  .message
+    .message__upper-info
+      %p.message__upper-info__talker test
+      %p.message__upper-info__date 2019/02/25(Mon) 21:27:39
+    %p.message__text test
