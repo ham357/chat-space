@@ -58,4 +58,7 @@ gem 'haml-rails'
 gem 'erb2haml'
 
 # Font Awesome
-gem 'font-awesome-sass', '~> 5.6.1'
+gem "font-awesome-rails"
+
+# devise
+gem 'devise'

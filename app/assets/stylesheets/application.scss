@@ -2,12 +2,15 @@
 @import "config/variable";
 @import "font-awesome";
 @import "fa";
-@import "flash-box";
 @import "form";
 @import "group";
 @import "main-header";
 @import "messages";
 @import "side-header";
+@import "user";
+@import "config/colors";
+@import "modules/flash-box";
+
 
 * {
   box-sizing: border-box;
