@@ -62,3 +62,7 @@ gem "font-awesome-rails"
 
 # devise
 gem 'devise'
+
+#binding.pry
+gem 'pry-rails'
+gem 'pry-byebug'
