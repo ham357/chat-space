@@ -46,8 +46,7 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       messagesField.append(html);
-      textField.val('');
-      imgField.val(null);
+      $('#new_message').get(0).reset();
       messagesField.animate({scrollTop:$(".messages")[0].scrollHeight});
     })
     .fail(function() {
