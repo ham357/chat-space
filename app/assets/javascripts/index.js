@@ -9,6 +9,19 @@ $(function(){
       search_list.append(html);
    }
 
+   $(document).on("click", ".chat-group-user__btn--add", function () {
+     console.log($(this).attr("data-user-name"))
+    var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+    <input name='group[user_ids][]' type='hidden' value='${ $(this).attr("data-user-id")}'>
+    <p class='chat-group-user__name'>${ $(this).attr("data-user-name") }</p>
+    <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+  </div>`
+
+    $("#add-chat-member").append(html);
+    $(this).parent().remove();
+
+   });
+
     $('#user-search-field').on("keyup", function () {
       var input = $("#user-search-field").val();
   
@@ -24,7 +37,6 @@ $(function(){
         if (users.length !== 0){
           users.forEach(function(user){
             appendUser(user);
-            // console.log(user.name)
           });
         }
         else{
