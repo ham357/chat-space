@@ -57,7 +57,7 @@ $(function(){
               users.forEach(function(user,index){
                 if (search_target.indexOf(user.name) == -1){
                   appendUser(user);
-                }else if(index == users.length - 1){
+                }else if(index == users.length - 1 && $("#user-search-result").text() == ""){
                   appendErrMsgToHTML("一致するユーザーはいません");
                 }
               });
