@@ -1,6 +1,6 @@
 $(function(){
-  var message_id = $('.message:last').data('id');
-  var pre_message_id = message_id;
+  var message_id;
+  var messagesField = $('.messages');
 
   function buildMESSAGE(message) {
     var html = `<div class="message" data-id="${ message.id }">
@@ -12,7 +12,6 @@ $(function(){
       ${ message.created_at}
     </p>
   </div>`
-
 
   if (message.content!=""){
     html += `<div class="message__text">
@@ -32,16 +31,11 @@ $(function(){
 
   }  
 
-  $(function(){
-    setInterval(update, 5000);
-  });
   function update(){ 
-    var messagesField = $('.messages');
-
     if($('.message')[0]){ 
       message_id = $('.message:last').data('id');
-    } else { 
-      var message_id = 0 
+    } else{
+      message_id = 0;
     }
 
     $.ajax({ 
@@ -56,19 +50,17 @@ $(function(){
       $.each(data, function(i, data){ 
         var html = buildMESSAGE(data); 
         messagesField.append(html);
-      });
-      if (pre_message_id !== message_id){
         messagesField.animate({scrollTop:$(".messages")[0].scrollHeight});
-      }
+      });
+
     })
     .fail(function() {
-      alert('error');
+      alert('message_update error');
     })
     .always(function(){ 
-      
-      pre_message_id = message_id;
-
     });
     }
   
+    setInterval(update, 5000);
+
 });
