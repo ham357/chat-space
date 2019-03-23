@@ -57,6 +57,8 @@ $(function(){
     });
     }
   
+    if (window.location.href.indexOf("messages") !== -1){
     setInterval(update, 5000);
+    }
 
 });
