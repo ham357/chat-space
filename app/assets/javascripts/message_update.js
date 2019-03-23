@@ -32,11 +32,7 @@ $(function(){
   }  
 
   function update(){ 
-    if($('.message')[0]){ 
-      message_id = $('.message:last').data('id');
-    } else{
-      message_id = 0;
-    }
+    ($('.message')[0]) ? message_id = $('.message:last').data('id'):message_id = 0;
 
     $.ajax({ 
       url: location.href, 
