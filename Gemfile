@@ -42,7 +42,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
-  gem 'faker'
   gem 'capybara'
   gem 'active_decorator'
   gem 'capistrano'
@@ -81,6 +80,8 @@ gem 'pry-byebug'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+
+gem 'faker'
 
 group :production do
   gem 'unicorn', '5.4.1'
