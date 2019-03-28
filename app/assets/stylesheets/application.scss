@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+.wrapper{
+  width:  2000px;
+}
+
 .chat-side {
   width: 300px;
   color: white;
@@ -32,6 +36,6 @@ a {
 }
 
 .chat-main {
-  float: left;
   width: calc(100vw - 300px);
+  float: left;
 }
