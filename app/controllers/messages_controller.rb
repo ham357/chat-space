@@ -10,6 +10,13 @@ class MessagesController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+  end
+
   def create
     @message = @group.messages.new(message_params)
     if @message.save
@@ -22,6 +29,11 @@ class MessagesController < ApplicationController
       flash.now[:alert] = 'メッセージを入力してください'
       render :index
     end
+  end
+
+  def destroy
+    @message =  @group.messages.find(params[:id])
+    @message.destroy
   end
 
   private
