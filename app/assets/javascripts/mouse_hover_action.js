@@ -10,7 +10,6 @@ $(function() {
   $(document).on({
     "mouseenter": function(){
     var message_user_id = $(this).attr("data-user_id");
-    console.log(message_user_id);
     if (current_user_id == message_user_id){
       message_element = $(this).find('.message__upper-info');
       message_btn_build();
