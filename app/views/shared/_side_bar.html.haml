@@ -1,7 +1,7 @@
 .chat-side
   .side-header
     .side-header__box
-      %p.side-header__box__user-name
+      %p.side-header__box__user-name{"data-current_user_id" => "#{current_user.id}"}
         = current_user.name
       %ul.side-header__box__menu
         %li.side-header__box__menu__edit-user
