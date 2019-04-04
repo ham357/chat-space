@@ -1,13 +1,10 @@
 $(function() {
-  var destroy_btn_element = $('.message__upper-info__destroy-message');
-  destroy_btn_element.on('click', function(e) {
+  $(document).on("click", ".message__upper-info__destroy-message", function () {
     var deleteConfirm = confirm('削除してよろしいでしょうか？');
     if(deleteConfirm == true) {
-      e.preventDefault();
       var message_element = $(this).parents('.message');
       var message_id = message_element.attr("data-id");
       var url = location.href + "/" + message_id;
-      console.log(url);
 
     $.ajax({
       url: url,

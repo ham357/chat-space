@@ -56,8 +56,7 @@ $(function() {
       })
     
   });
-
-  $('.message__upper-info__edit-message').on('click', function() {
+  $(document).on("click", ".message__upper-info__edit-message", function () {
     InlineEdit = $(this).parents('.message');
     values = {
       id: InlineEdit.attr("data-id"),
