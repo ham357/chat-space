@@ -11,23 +11,21 @@ $(function(){
     <p class="message__upper-info__date">
       ${ message.created_at}
     </p>
-  </div>`
+  </div>
+  <div class="message__text">`
 
   if (message.content!=""){
-    html += `<div class="message__text">
-    <p class="lower-message__content">
+    html += `<p class="lower-message__content">
       ${ message.content }
-    </p>
-  </div>`
+    </p>`
   }
 
   if (message.image!=null){
-    html += `<div class="message__text">
-    <img src='${ message.image }', class='lower-message__image'>
-  </div>`
+    html += `<img src='${ message.image }', class='lower-message__image'>`
   }
-  
-    return html;
+    html += `</div>`
+
+    messagesField.append(html);
 
   }  
 
@@ -44,8 +42,7 @@ $(function(){
     })
     .done(function(data) {
       $.each(data, function(i, data){ 
-        var html = buildMESSAGE(data); 
-        messagesField.append(html);
+        buildMESSAGE(data);
         messagesField.animate({scrollTop:$(".messages")[0].scrollHeight});
       });
 
@@ -58,7 +55,11 @@ $(function(){
     }
   
     if (window.location.href.indexOf("messages") !== -1){
-    setInterval(update, 5000);
+      window.onload = function() {
+        ($('.message')[0]) ? message_id = $('.message:last').data('id'):message_id = 0;
+      messagesField.animate({scrollTop:$(".messages")[0].scrollHeight});     
+      }
+      setInterval(update, 5000);
     }
 
 });
