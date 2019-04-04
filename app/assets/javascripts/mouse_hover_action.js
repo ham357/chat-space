@@ -9,15 +9,18 @@ $(function() {
   }  
   $(document).on({
     "mouseenter": function(){
-    var message_user_id = $(this).attr("data-user_id");
-    if (current_user_id == message_user_id){
-      message_element = $(this).find('.message__upper-info');
-      message_btn_build();
-    }},
+      if(!$('.InlineEdit-active')[0]) {
+        var message_user_id = $(this).attr("data-user_id");
+        if (current_user_id == message_user_id){
+          message_element = $(this).find('.message__upper-info');
+          message_btn_build();
+        }
+      }
+    },
     "mouseleave": function(){
       message_menu_element = $(this).find('.message__upper-info__menu');
       message_menu_element.remove();
     }
-    }, ".message");
+  }, ".message");
 
 });

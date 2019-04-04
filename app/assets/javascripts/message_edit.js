@@ -48,7 +48,7 @@ $(function() {
         dataType: 'json'
       })
       .done(function(data) {
-        var html = reBuild(data);
+        reBuild(data);
       })
       
       .fail(function() {
