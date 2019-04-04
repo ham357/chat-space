@@ -17,7 +17,6 @@ class MessagesController < ApplicationController
   def update
     @message = @group.messages.find(params[:id])
     @message.content = params[:content]
-    # binding.pry
     if @message.save
       respond_to do |format|
         format.html  { redirect_to group_messages_path(@group), notice: 'メッセージが編集されました' }
