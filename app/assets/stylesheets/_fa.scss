@@ -24,3 +24,15 @@
     content: "\f03e";
   }
 }
+
+.fa-times{
+  &:before{
+    content: "\f00d";
+  }
+
+.fa-check-circle{
+  &:before{
+    content: "\f058";
+  }
+}
+}

@@ -1,6 +1,6 @@
 $(function() {
   function buildHTML(message) {
-    var html = `<div class="message" data-id="${ message.id }">
+    var html = `<div class="message" data-id="${ message.id }" data-user_id="${message.user_id}"}>
   <div class="message__upper-info">
     <p class="message__upper-info__talker">
       ${ message.name }
@@ -8,22 +8,18 @@ $(function() {
     <p class="message__upper-info__date">
       ${ message.created_at}
     </p>
-  </div>`
+    </div><div class="message__text">`
 
-  if (message.content!=""){
-    html += `<div class="message__text">
-    <p class="lower-message__content">
-      ${ message.content }
-    </p>
-  </div>`
-  }
-
-  if (message.image!=null){
-    html += `<div class="message__text">
-    <img src='${ message.image }', class='lower-message__image'>
-  </div>`
-  }
+    if (message.content!=""){
+      html += `<p class="lower-message__content">${ message.content }</p>`
+    }
   
+    if (message.image!=null){
+      html += `<img src='${ message.image }', class='lower-message__image'>`
+    }
+  
+    html += '</div>'
+
     return html;
 
   }  

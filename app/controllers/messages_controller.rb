@@ -10,6 +10,21 @@ class MessagesController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+    @message = @group.messages.find(params[:id])
+    @message.content = params[:content]
+    if @message.save
+      respond_to do |format|
+        format.html  { redirect_to group_messages_path(@group), notice: 'メッセージが編集されました' }
+        format.json
+      end
+    end
+  end
+
   def create
     @message = @group.messages.new(message_params)
     if @message.save
@@ -22,6 +37,11 @@ class MessagesController < ApplicationController
       flash.now[:alert] = 'メッセージを入力してください'
       render :index
     end
+  end
+
+  def destroy
+    @message =  @group.messages.find(params[:id])
+    @message.destroy
   end
 
   private
