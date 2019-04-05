@@ -25,6 +25,7 @@ $(function(){
   }
     html += `</div>`
 
+    group_message_update(message);
     messagesField.append(html);
 
   }  
