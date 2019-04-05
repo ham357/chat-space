@@ -20,6 +20,7 @@ $(function() {
   
     html += '</div>'
 
+    group_message_update(message);
     return html;
 
   }  
