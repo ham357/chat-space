@@ -10,12 +10,13 @@
           .field-label
             = f.label :email
           .field-input
-            = f.email_field :email, autofocus: true
+            = f.email_field :email, value: "satan@satan.com", autofocus: true
           .field
             .field-label
               = f.label :password
               %i (英数字8文字以上)
             .field-input
-              = f.password_field :password, autocomplete: "off"
+              = f.password_field :password, value: 11111111, autocomplete: "off"
           .actions
+            %h5 テストならこのままログイン
             = f.submit "Log in", class: 'btn'
